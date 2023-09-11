@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
-    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint . ",
@@ -51,8 +51,5 @@
     "stylelint-checkstyle-formatter": "^0.1.2",
     "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-scss": "^4.3.0"
-  },
-  "devDependencies": {
-    "parcel": "^2.9.3"
   }
 }

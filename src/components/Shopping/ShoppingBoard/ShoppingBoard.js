@@ -19,6 +19,7 @@ const ShoppingBoard = (props) => {
           onDeleteShopping={props.onDeleteShopping}
           onCompleteShopping={props.onCompleteShopping}
           onEditHandler={props.onEditHandler}
+          isLoading={props.isLoading}
         />
       </Card>
     </>

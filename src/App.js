@@ -14,6 +14,7 @@ const App = () => {
   const [isEditing, setIsEditing] = useState(false)
   const [editItemId, setEditItemId] = useState()
   const [filterCategories, setFilterCategories] = useState([])
+  const [loading, setLoading] = useState(true)  
 
   const itemsCollectionRef = firebase.firestore().collection('items')
 
@@ -36,6 +37,7 @@ const App = () => {
       })
       await Promise.all(promises)
       setExpenses(items)
+      setLoading(false)
       setFilterCategories(Array.from(uniqueCategories))
     } catch (error) {
       console.error('Error fetching data: ', error)
@@ -172,8 +174,6 @@ const App = () => {
     setEditItemId('')
   }
 
-  // console.log('expense array: ', expenses)
-
   return (
     <>
       <Background />
@@ -203,6 +203,7 @@ const App = () => {
             onDeleteShopping={deleteShoppingHandler}
             items={expenses}
             currentCategory={filteredCategory}
+            isLoading={loading}
           />
 
           <ShoppingCounter

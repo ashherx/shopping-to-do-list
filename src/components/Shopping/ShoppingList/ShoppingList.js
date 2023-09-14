@@ -3,6 +3,14 @@ import ShoppingItem from '../../Shopping/ShoppingItem/ShoppingItem'
 import './ShoppingList.scss'
 
 const ShoppingList = (props) => {
+  
+  if (props.isLoading) {
+    return (
+      <div className="alert">
+        <h2 className="alert__message">Loading...</h2>
+      </div>
+    )
+  }
 
   if (props.items.length === 0) {
     return (

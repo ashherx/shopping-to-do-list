@@ -1,14 +1,14 @@
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/firestore';
+import firebase from 'firebase/compat/app'
+import 'firebase/compat/firestore'
 
-const firebaseConfig = {   
-    apiKey: 'AIzaSyA0ntPqyCol5J_tdQjXH6gSjUlBVCCGnFc',
-    authDomain: 'shopping-list-11699.firebaseapp.com',
-    projectId: 'shopping-list-11699',
-    storageBucket: 'shopping-list-11699.appspot.com',
-    messagingSenderId: '717950232360',
-    appId: '1:717950232360:web:7987142837f80fa71b921d',
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 }
 
-firebase.initializeApp(firebaseConfig);
-export default firebase;
+firebase.initializeApp(firebaseConfig)
+export default firebase

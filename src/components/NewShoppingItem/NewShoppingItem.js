@@ -29,6 +29,7 @@ const NewShoppingItem = (props) => {
       props.onAddShopping(shoppingData2)
       setIsAdding(false)
     } catch (error) {
+      // eslint-disable-next-line
       console.error('Error adding item: ', error)
     }
   }

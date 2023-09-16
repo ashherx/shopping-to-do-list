@@ -40,6 +40,7 @@ const App = () => {
       setLoading(false)
       setFilterCategories(Array.from(uniqueCategories))
     } catch (error) {
+      // eslint-disable-next-line
       console.error('Error fetching data: ', error)
     }
   }
@@ -87,14 +88,12 @@ const App = () => {
     }
 
     setExpenses(shoppingList)
-    console.log('expenses after delete:', shoppingList)
 
     if (shoppingList.length > 0) {
       let tempCategory = new Set()
       shoppingList.map((item) => {
         tempCategory.add(item.category)
       })
-      console.log('tempCategory:', tempCategory)
       setFilterCategories(Array.from(tempCategory))
     }
   }
@@ -104,8 +103,6 @@ const App = () => {
 
     const itemRef = itemsCollectionRef.doc(id)
     const itemDoc = await itemRef.get()
-    console.log('id', id)
-    console.log('itemDoc', itemDoc.data())
     const currentIsCompleted = itemDoc.data().isCompleted
     await itemRef.update({ isCompleted: !currentIsCompleted })
 
@@ -134,6 +131,7 @@ const App = () => {
         category: newCategory,
       })
     } catch (error) {
+      // eslint-disable-next-line
       console.error('Error updating title and category: ', error)
       throw error
     }
